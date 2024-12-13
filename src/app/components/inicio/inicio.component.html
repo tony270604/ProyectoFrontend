@@ -1,0 +1,57 @@
+<div class="cont-general">
+  <app-nav></app-nav>
+
+  <main class="main-container">
+    <div class="content">
+      <!-- Formulario de búsqueda -->
+      <div class="formulario-A">
+        <div class="formularioBusqueda">
+          <input type="text" class="form-control" placeholder="Buscar por nombre" #searchInput />
+          <button class="btn btn-primary" (click)="onBuscarComida(searchInput.value)">
+            Buscar
+          </button>
+        </div>
+
+        <!-- Botón para agregar comida -->
+        <div class="btnAgregar">
+          <button type="button" class="btn btn-success" (click)="openModalNew()">
+            Agregar Comida
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla de comidas -->
+      <div class="cont-table">
+        <table class="table table-hover custom-table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let comida of listarComida">
+              <td>
+                <img [src]="comida.img1_com" alt="Imagen de la Comida" class="food-image" />
+              </td>
+              <td>{{ comida.cod_com }}</td>
+              <td>{{ comida.nom_com }}</td>
+              <td>{{ comida.des_com }}</td>
+              <td>{{ comida.precio_com }}</td>
+              <td>
+                <app-btn-inicio [comida]="comida" (editarComida)="onEditarComida($event)">
+                </app-btn-inicio>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

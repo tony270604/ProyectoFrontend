@@ -1,0 +1,27 @@
+<div class="body">
+    <div class="login">
+        <form (ngSubmit)="ingresar()">
+            <img src="img/user.png" />
+            <h5>Formulario de Login</h5>
+            <mat-form-field class="custom2">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="email" name="email" type="text" autocomplete="false" required>
+            </mat-form-field>
+            <mat-form-field class="custom2">
+                <mat-label>Clave</mat-label>
+                <input matInput [(ngModel)]="password" name="password" type="password" autocomplete="false">
+            </mat-form-field>
+            <br>
+            <div class="botones">
+              <button type="button" class="custom1" mat-flat-button id="btn1" routerLink="/registro">
+                  <mat-icon fontIcon="how_to_reg"></mat-icon>
+                  Registrarse
+              </button>
+              <button type="submit" mat-flat-button class="custom1" id="btn">
+                  <mat-icon fontIcon="login"></mat-icon>
+                  Login
+              </button>
+            </div>
+        </form>
+    </div>
+  </div>

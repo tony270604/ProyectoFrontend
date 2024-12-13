@@ -1,0 +1,40 @@
+<div class="body">
+    <div class="login">
+        <form (ngSubmit)="registrar()">
+            <img src="img/user.png" />
+            <h5>Formulario de Registro</h5>
+            <div class="caja">
+                <div class="caja1">
+                    <mat-form-field class="custom">
+                        <mat-label>Name</mat-label>
+                        <input matInput [(ngModel)]="name" name="name" type="text" autocomplete="off" required>
+                    </mat-form-field>
+                    <mat-form-field class="custom">
+                        <mat-label>Number</mat-label>
+                        <input matInput [(ngModel)]="number" name="number" type="text" autocomplete="off" required>
+                    </mat-form-field>
+                </div>
+                <div class="caja2">
+                    <mat-form-field class="custom">
+                        <mat-label>Email</mat-label>
+                        <input matInput [(ngModel)]="email" name="email" type="text" autocomplete="off" required>
+                    </mat-form-field>
+                    <mat-form-field class="custom">
+                        <mat-label>Password</mat-label>
+                        <input matInput [(ngModel)]="password" name="password" type="password" autocomplete="off" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="botones">
+                <button type="button" class="custom1" mat-flat-button id="btn1" routerLink="/change-password">
+                    <mat-icon fontIcon="how_to_reg"></mat-icon>
+                    Cambiar Contraseña
+                </button>
+                <button type="submit" mat-flat-button class="custom" id="btn">
+                    <mat-icon fontIcon="how_to_reg"></mat-icon>
+                    Registrarse
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

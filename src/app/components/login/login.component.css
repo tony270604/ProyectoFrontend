@@ -1,0 +1,90 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; 
+    margin: 0;
+  }
+  
+  .login {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  img {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  h5 {
+    margin: 0 0 1.5rem;
+    color: #333333;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .custom2 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    font-size: 1rem;
+  }
+  
+  .botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  button.custom1 {
+    width: 48%;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    color: #ffffff;
+    background-color: #3f51b5; 
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.custom1:hover {
+    background-color: #303f9f;
+  }
+  
+  #btn1 {
+    background-color: #4caf50;
+  }
+  
+  #btn1:hover {
+    background-color: #388e3c;
+  }
+  
+  mat-icon {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  
+  @media (max-width: 480px) {
+    .login {
+      padding: 1.5rem;
+    }
+  
+    h5 {
+      font-size: 1.2rem;
+    }
+  
+    button.custom1 {
+      font-size: 0.8rem;
+      padding: 0.6rem;
+    }
+  }
+  

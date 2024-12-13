@@ -1,0 +1,79 @@
+<div class="cont-general">
+    <app-nav></app-nav>
+    <main class="main-container">
+      <form [formGroup]="pedidoForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>DNI</mat-label>
+          <input matInput type="text" id="dni_cli" formControlName="dni_cli">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" id="nom_cli" formControlName="nom_cli">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Correo</mat-label>
+          <input matInput type="email" id="correo_cli" formControlName="correo_cli">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Hora</mat-label>
+          <input matInput type="time" id="hora" formControlName="hora">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha</mat-label>
+          <input matInput [matDatepicker]="picker" id="fec_bol" formControlName="fec_bol">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Código de Gestor</mat-label>
+          <input matInput type="text" id="cod_ges" formControlName="cod_ges">
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Método de Pago</mat-label>
+          <mat-select id="metodo_pago" formControlName="metodo_pago">
+            <mat-option value="efectivo">Efectivo</mat-option>
+            <mat-option value="tarjeta">Tarjeta</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <div formArrayName="detalles">
+          <h3>Detalles de Venta</h3>
+          <button mat-raised-button color="primary" type="button" (click)="addDetalle()">
+            Agregar Comida
+          </button>
+  
+          <div *ngFor="let detalle of detalles.controls; let i = index" [formGroupName]="i">
+            <mat-form-field appearance="outline">
+              <mat-label>Código de Comida</mat-label>
+              <input matInput type="text" [id]="'cod_com_' + i" formControlName="cod_com">
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Cantidad</mat-label>
+              <input matInput type="number" [id]="'cantidad_' + i" formControlName="cantidad">
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Comentario</mat-label>
+              <textarea matInput [id]="'comentario_' + i" formControlName="comentario"></textarea>
+            </mat-form-field>
+  
+            <button mat-raised-button color="warn" type="button" (click)="removeDetalle(i)">
+              Eliminar
+            </button>
+          </div>
+        </div>
+  
+        <button mat-raised-button color="accent" type="submit" [disabled]="!pedidoForm.valid">
+          Enviar Pedido
+        </button>
+      </form>
+    </main>
+  </div>
+  <app-footer></app-footer>

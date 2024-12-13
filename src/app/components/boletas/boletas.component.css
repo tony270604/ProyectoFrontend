@@ -1,0 +1,87 @@
+.cont-general {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+    nav {
+      padding: auto;
+    }
+  
+    main {
+      padding: 1rem;
+      flex: 1;
+      
+    }
+    
+    footer {
+      padding: auto;
+    }
+  }
+  .content{
+    margin-top: 40px;
+  }
+  .main-container {
+    background-color: #f8f9fa;
+    margin-bottom: 90px;
+  }
+  .cont-table{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .table {
+    width: 80%;
+  }
+
+  .table th, .table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border:dotted rgb(53, 55, 56) 1px; 
+  }
+  
+  .table th {
+    background-color:  #212529; 
+    color: white;
+    text-align: center;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+  .table td {
+    vertical-align: middle;
+  }
+  .d-flex {
+    width: 80%;
+  }
+  h2.center-text {
+    margin: 0 auto; 
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .btn-success-custom {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-success-custom:hover {
+    background-color: #218838; 
+    transform: scale(1.05); 
+  }
+  
+  .btn-success-custom:active {
+    background-color: #1e7e34; 
+    transform: scale(0.95); 
+  }

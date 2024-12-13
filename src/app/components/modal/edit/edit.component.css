@@ -1,0 +1,81 @@
+.modal {
+    opacity: 0; /* Invisible por defecto */
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.5); 
+    transition: opacity 0.4s ease; 
+  }
+  
+  .modal-dialog {
+    transform: translateY(-30px); 
+    transition: transform 0.4s ease;
+  }
+  
+  .modal.show {
+    opacity: 1; 
+    pointer-events: auto;
+  }
+  
+  .modal.show .modal-dialog {
+    transform: translateY(0); 
+  }
+  
+  .modal.opening {
+    opacity: 0; 
+    pointer-events: none;
+  }
+  
+  .modal.opening .modal-dialog {
+    transform: translateY(-30px); 
+  }
+  
+  .modal.hiding {
+    opacity: 0; 
+    pointer-events: none;
+  }
+  
+  .modal.hiding .modal-dialog {
+    transform: translateY(-30px); 
+  }
+  
+  
+  /*Lo mio*/
+  .at{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 500px;
+  }
+  .des {
+    width: 460px;
+    padding-left: 7px;
+  }  
+  .des textarea {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box; 
+    overflow-y: auto;
+    resize: none;
+  }
+  .custom-input-group {
+    display: flex;
+    flex-direction: column;
+    background-color: #dddfe8;
+    border-radius: 5px;
+    padding: 10px 0px 10px 10px;
+    width: 450px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+  
+  .custom-input-group label {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .custom-input-group .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    width: 430px;
+  }
+  

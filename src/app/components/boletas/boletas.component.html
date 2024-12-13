@@ -1,0 +1,55 @@
+<div class="cont-general">
+  <app-nav></app-nav>
+  <div class="main-container">
+    <div class="content">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="center-text">Lista de Boletas</h2>
+        <button (click)="generarReporte()" class="btn btn-success-custom">Generar Reporte de Ventas</button>
+      </div>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+      <div class="cont-table">
+        <table *ngIf="boletas.length > 0" class="table table-hover custom-table">
+          <thead>
+            <tr>
+              <th>Número de Boleta</th>
+              <th>DNI Cliente</th>
+              <th>Nombre Cliente</th>
+              <th>Correo Cliente</th>
+              <th>Total</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Estado</th>
+              <th>Método de Pago</th>
+              <th>Detalles</th>
+              <th>Interactuar</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let boleta of boletas">
+              <td>{{ boleta.num_bol }}</td>
+              <td>{{ boleta.dni_cli }}</td>
+              <td>{{ boleta.nom_cli }}</td>
+              <td>{{ boleta.correo_cli }}</td>
+              <td>{{ boleta.total }}</td>
+              <td>{{ boleta.fec_bol | date:'shortDate' }}</td>
+              <td>{{ boleta.hora }}</td>
+              <td>{{ boleta.estado }}</td>
+              <td>{{ boleta.metodo_pago }}</td>
+              <td>{{ boleta.detalles }}</td>
+              <td>
+                <button (click)="inhabilitarBoleta(boleta.num_bol)" class="btn btn-danger"
+                  [disabled]="boleta.estado === 'inhabilitado'">
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
