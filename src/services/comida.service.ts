@@ -3,12 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ComidaService {
-  private apiUrl = 'https://proyectobackendfinal.onrender.com/api/comida';
+
+  private backendUrl = environment.backendUrl;
+  
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +28,7 @@ export class ComidaService {
       params = { ...params, categoria };
     }
 
-    return this.http.get<any[]>(`${this.apiUrl}/listarcomida`, { params });
+    return this.http.get<any[]>(`${this.backendUrl}/listarcomida`, { params });
   }
 
   addFood(
@@ -40,7 +43,7 @@ export class ComidaService {
     formData.append('des', des);
     formData.append('img', img);
 
-    return this.http.post(`${this.apiUrl}/addFood`, formData);
+    return this.http.post(`${this.backendUrl}/addFood`, formData);
   }
 
   editFood(
@@ -60,11 +63,11 @@ export class ComidaService {
       formData.append('img', img);
     }
 
-    return this.http.post(`${this.apiUrl}/editFood`, formData);
+    return this.http.post(`${this.backendUrl}/editFood`, formData);
   }
 
   deleteFood(cod_com: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/deleteFood`, { cod_com });
+    return this.http.post(`${this.backendUrl}/deleteFood`, { cod_com });
   }
 
   private comidaSubject = new BehaviorSubject<any>(null);
