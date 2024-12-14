@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ComidaService {
-  private apiUrl = 'http://localhost:5001/api/comida';
+  private apiUrl = 'https://proyectobackendfinal.onrender.com/api/comida';
 
   constructor(private http: HttpClient) {}
 

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class GestorService {
-    private apiUrl = 'http://localhost:5001/api/gestor';
+    private apiUrl = 'https://proyectobackendfinal.onrender.com/api/gestor';
 
     constructor(private http: HttpClient) { }
 

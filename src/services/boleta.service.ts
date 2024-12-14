@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BoletaService {
-  private apiUrl = 'http://localhost:5001/api/boleta'; // Cambia al puerto de tu backend
+  private apiUrl = 'https://proyectobackendfinal.onrender.com/api/boleta'; // Cambia al puerto de tu backend
 
   constructor(private http: HttpClient) {}
 
