@@ -21,7 +21,7 @@ export class GestorService {
             return response;
           })
         );
-      }
+      }  
 
       logout(): Observable<any> {
         const token = localStorage.getItem('token');
