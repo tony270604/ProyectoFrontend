@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ComidaService {
 
-  private backendUrl = environment.backendUrl;
+  private backendUrl = environment.backendUrl + '/api/comida';
   
 
   constructor(private http: HttpClient) {}
