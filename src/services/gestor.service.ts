@@ -15,7 +15,7 @@ export class GestorService {
 
     validateLogin(email: string, password: string): Observable<any> {
         const body = { email, password };
-        return this.http.post(`${this.backendUrl}/validateLogin`, body).pipe(
+        return this.http.post(`${this.backendUrl}/api/gestor/validateLogin`, body).pipe(
           map((response: any) => {
             localStorage.setItem('token', response.token); // Guardar el token en localStorage
             return response;
@@ -28,7 +28,7 @@ export class GestorService {
         const headers = new HttpHeaders({
           Authorization: `Bearer ${token}`,
         });
-        return this.http.post(`${this.backendUrl}/logout`, {}, { headers }).pipe(
+        return this.http.post(`${this.backendUrl}/api/gestor//logout`, {}, { headers }).pipe(
           map(response => {
             localStorage.removeItem('token'); // Eliminar el token del almacenamiento local
             return response;
@@ -41,11 +41,11 @@ export class GestorService {
         return !!localStorage.getItem('token');
       }
     record(name: string, number: string, email: string, password: string): Observable<any> {
-        return this.http.post(`${this.backendUrl}/record`, { name, number, email, password });
+        return this.http.post(`${this.backendUrl}/api/gestor//record`, { name, number, email, password });
     }
 
     changePassword(email: string, password: string): Observable<any> {
-        return this.http.post(`${this.backendUrl}/changePassword`, { email, password });
+        return this.http.post(`${this.backendUrl}/api/gestor//changePassword`, { email, password });
     }
     
 }
